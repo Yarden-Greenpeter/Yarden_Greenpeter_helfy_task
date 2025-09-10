@@ -12,7 +12,7 @@
     "install:dependencies": "npm install && cd ../frontend && npm install && cd ../backend",
     "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
     "deploy": "npm run build:ui && npm start",
-    "assigenment:start": "install:dependencies && deploy"
+    "assignment:start": "npm run install:dependencies && npm run deploy"
   },
   "dependencies": {
     "cors": "^2.8.5",
