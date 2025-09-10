@@ -67,20 +67,19 @@ npm run build - Build for production
 Base URL: `http://localhost:4000/api/tasks`
 
 ### Endpoints
-Get All Tasks
-GET /api/tasks
-Response:
+##Get All Tasks##
+  GET /api/tasks
+  Response:
+  200 - Array of task objects
+  500 - Internal server error
 
-200 - Array of task objects
-500 - Internal server error
+##Get Single Task##
+  GET /api/tasks/:id
+  Response:
 
-Get Single Task
-GET /api/tasks/:id
-Response:
-
-200 - Task object
-404 - Task not found
-500 - Internal server error
+    200 - Task object
+    404 - Task not found
+    500 - Internal server error
 
 Create Task
 POST /api/tasks
@@ -211,3 +210,4 @@ Responsive design
 **Created:** 2025
 
 **Tech Stack:** React.js, Express.js, Node.js, Vite
+
