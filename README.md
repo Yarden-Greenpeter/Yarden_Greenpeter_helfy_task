@@ -67,7 +67,6 @@ npm run build - Build for production
 Base URL: `http://localhost:4000/api/tasks`
 
 ### Endpoints
-
 Get All Tasks
 GET /api/tasks
 Response:
@@ -131,6 +130,7 @@ Response:
 204 - No Content (successful deletion)
 404 - Task not found
 500 - Internal server error
+
 
 ### Task Object Schema
 
