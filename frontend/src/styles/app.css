@@ -1,0 +1,159 @@
+:root {
+  --fg: #111827;
+  --muted: #6b7280;
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+
+  --prio-low-bg: #e6f9f0;
+  --prio-low-fg: #047857;
+  --prio-med-bg: #fff8e6;
+  --prio-med-fg: #d97706;
+  --prio-high-bg: #ffeef0;
+  --prio-high-fg: #dc2626;
+
+  --gap: 12px;
+  --card-w: clamp(280px, 80vw, 340px);
+}
+* { box-sizing: border-box; }
+html, body, #root { 
+  height: 100%; 
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: var(--bg); color: var(--fg);
+}
+.app-container { 
+  max-width: 920px; margin: 0 auto; padding: 24px; 
+}
+.app-header { 
+  display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; 
+}
+.subtitle { 
+  color: var(--muted); 
+}
+.task-form, .task-filter, .task-list { 
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04); 
+}
+button, input, select, textarea { 
+  font: inherit; 
+}
+button {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: background .2s ease, transform .08s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+.task-form .form-row { 
+  display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; 
+}
+.task-form input, .task-form textarea, .task-form select { 
+  padding: 10px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; 
+}
+.task-form .form-actions { 
+  display: flex; gap: 8px; justify-content: flex-end; 
+}
+.form-error { 
+  color: var(--prio-high-fg); background: var(--prio-high-bg); border: 1px solid #ffc9c9; border-radius: 8px; padding: 8px; 
+}
+.muted { 
+  color: var(--muted); font-size: 12px; 
+}
+.task-item { 
+  border: 1px dashed var(--border); border-radius: 12px; padding: 12px; background: #fff; min-width: var(--card-w); 
+}
+.task-item + .task-item { 
+  margin-left: var(--gap); 
+}
+.task-item.is-completed .task-title { 
+  text-decoration: line-through; opacity: .75; 
+}
+.task-head { 
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; gap:8px; 
+}
+.task-title { 
+  margin:6px 0; font-size:1.05rem; 
+}
+.task-description { 
+  color: var(--muted); margin: 0 0 10px; 
+}
+.task-footer { 
+  display:flex; align-items:center; justify-content:space-between; gap:8px; 
+}
+.task-created-at { 
+  color: var(--muted); font-size: 12px; 
+}
+.task-actions { 
+  display:flex; gap:8px; 
+}
+.btn-toggle.is-on { 
+  opacity: .9; 
+}
+.badge { 
+  padding: 2px 8px; border-radius: 999px; font-size: 12px; text-transform: capitalize; 
+}
+.badge-low   { 
+  background: var(--prio-low-bg);  color: var(--prio-low-fg); 
+}
+.badge-medium{ 
+  background: var(--prio-med-bg);  color: var(--prio-med-fg); 
+}
+.badge-high  { 
+  background: var(--prio-high-bg); color: var(--prio-high-fg); 
+}
+.task-filter { 
+  display:flex; gap:8px; flex-wrap: wrap; align-items: center; 
+}
+.btn-filter { 
+  padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; 
+}
+.btn-filter.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.3);
+}
+.task-list { 
+  overflow: hidden; padding: 16px; 
+}
+.task-list .carousel-track {
+  display: flex; align-items: stretch; will-change: transform;
+  gap: var(--gap); transition: transform 380ms ease-out;
+}
+.carousel-card { 
+  flex: 0 0 var(--card-w); width: var(--card-w); 
+}
+.empty { 
+  color: var(--muted); text-align: center; padding: 24px 8px; 
+}
+@media (min-width: 640px) { 
+  :root { --card-w: clamp(300px, 45vw, 360px); } 
+}
+@media (min-width: 900px) { 
+  :root { --card-w: clamp(300px, 30vw, 360px); } 
+}
