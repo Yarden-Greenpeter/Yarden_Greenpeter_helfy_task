@@ -5,7 +5,8 @@ A modern, full-stack task management application built with React, Node.js and E
 ## Quick Start
 
 git clone <repository-url>
-cd task-manager/backend
+cd Yarden_Greenpeter_helfy_task/backend
+npm install
 npm run assigenment:start
 
 Access at: http://localhost:4000
