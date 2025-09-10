@@ -196,6 +196,14 @@ Responsive design
 - Frontend components & testing: 120 minutes  
 - Styling & polish: 20 minutes
 - Scripts & readme: 10 minutes
+
+## Screenshots
+
+![Application Screenshot 1](./assets/images/1.jpg)
+
+![Application Screenshot 2](./assets/images/2.jpg)
+
+![Application Screenshot 3](./assets/images/3.jpg)
 ---
 
 **Author:** Yarden Greenpeter  
