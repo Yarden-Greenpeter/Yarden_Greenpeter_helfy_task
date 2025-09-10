@@ -174,11 +174,10 @@ Response:
 
 ## Design Decisions
 
-Storage: In-memory array (would use database in production)
-Frontend: React with carousel interface for task browsing
-Styling: Light theme with priority color coding
-Validation: Real-time form validation with character limits
-API: RESTful design with proper HTTP status codes
+Used the attached pdf to formulate the main components of the app, add validation on front and backend, 
+decided to add  more files to make a better and seperated logic handling.
+added scripts for easier running and setup
+
 
 ## Features
 
@@ -194,11 +193,12 @@ Responsive design
 **Total: 4 hours**
 
 - Backend API & Testing: 90 minutes
-- Frontend components: 120 minutes  
+- Frontend components & testing: 120 minutes  
 - Styling & polish: 20 minutes
 - Scripts & readme: 10 minutes
 ---
 
 **Author:** Yarden Greenpeter  
 **Created:** 2025
+
 **Tech Stack:** React.js, Express.js, Node.js, Vite
