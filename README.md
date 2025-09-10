@@ -69,14 +69,14 @@ Base URL: `http://localhost:4000/api/tasks`
 ### Endpoints
 
 Get All Tasks
-httpGET /api/tasks
+GET /api/tasks
 Response:
 
 200 - Array of task objects
 500 - Internal server error
 
 Get Single Task
-httpGET /api/tasks/:id
+GET /api/tasks/:id
 Response:
 
 200 - Task object
@@ -84,10 +84,10 @@ Response:
 500 - Internal server error
 
 Create Task
-httpPOST /api/tasks
+POST /api/tasks
 Content-Type: application/json
-
-{
+Request Body:
+json{
   "title": "Task title",
   "description": "Optional description",
   "priority": "low|medium|high",
@@ -100,10 +100,10 @@ Response:
 500 - Internal server error
 
 Update Task
-httpPUT /api/tasks/:id
+PUT /api/tasks/:id
 Content-Type: application/json
-
-{
+Request Body:
+json{
   "title": "Updated title",
   "description": "Updated description",
   "priority": "high",
@@ -117,7 +117,7 @@ Response:
 500 - Internal server error
 
 Toggle Task Completion
-httpPATCH /api/tasks/:id/toggle
+PATCH /api/tasks/:id/toggle
 Response:
 
 200 - Updated task object with toggled completion status
@@ -125,7 +125,7 @@ Response:
 500 - Internal server error
 
 Delete Task
-httpDELETE /api/tasks/:id
+DELETE /api/tasks/:id
 Response:
 
 204 - No Content (successful deletion)
