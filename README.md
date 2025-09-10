@@ -66,69 +66,89 @@ npm run build - Build for production
 
 Base URL: `http://localhost:4000/api/tasks`
 
-### Endpoints
-##Get All Tasks##
-  GET /api/tasks
-  Response:
-  200 - Array of task objects
-  500 - Internal server error
+# Task API Endpoints
 
-##Get Single Task##
-  GET /api/tasks/:id
-  Response:
+## Get All Tasks
+**GET** `/api/tasks`
 
-    200 - Task object
-    404 - Task not found
-    500 - Internal server error
+**Response:**
+- `200` - Array of task objects
+- `500` - Internal server error
 
-Create Task
-POST /api/tasks
-Content-Type: application/json
-Request Body:
-json{
+---
+
+## Get Single Task
+**GET** `/api/tasks/:id`
+
+**Response:**
+- `200` - Task object
+- `404` - Task not found
+- `500` - Internal server error
+
+---
+
+## Create Task
+**POST** `/api/tasks`
+
+**Content-Type:** `application/json`
+
+**Request Body:**
+```json
+{
   "title": "Task title",
   "description": "Optional description",
   "priority": "low|medium|high",
   "completed": false
 }
-Response:
+```
 
-201 - Created task object
-400 - Validation error or missing request body
-500 - Internal server error
+**Response:**
+- `201` - Created task object
+- `400` - Validation error or missing request body
+- `500` - Internal server error
 
-Update Task
-PUT /api/tasks/:id
-Content-Type: application/json
-Request Body:
-json{
+---
+
+## Update Task
+**PUT** `/api/tasks/:id`
+
+**Content-Type:** `application/json`
+
+**Request Body:**
+```json
+{
   "title": "Updated title",
   "description": "Updated description",
   "priority": "high",
   "completed": true
 }
-Response:
+```
 
-200 - Updated task object
-400 - Validation error or missing request body
-404 - Task not found
-500 - Internal server error
+**Response:**
+- `200` - Updated task object
+- `400` - Validation error or missing request body
+- `404` - Task not found
+- `500` - Internal server error
 
-Toggle Task Completion
-PATCH /api/tasks/:id/toggle
-Response:
+---
 
-200 - Updated task object with toggled completion status
-404 - Task not found
-500 - Internal server error
+## Toggle Task Completion
+**PATCH** `/api/tasks/:id/toggle`
 
-Delete Task
-DELETE /api/tasks/:id
-Response:
+**Response:**
+- `200` - Updated task object with toggled completion status
+- `404` - Task not found
+- `500` - Internal server error
 
-204 - No Content (successful deletion)
-404 - Task not found
-500 - Internal server error
+---
+
+## Delete Task
+**DELETE** `/api/tasks/:id`
+
+**Response:**
+- `204` - No Content (successful deletion)
+- `404` - Task not found
+- `500` - Internal server error
 
 
 ### Task Object Schema
@@ -210,4 +230,5 @@ Responsive design
 **Created:** 2025
 
 **Tech Stack:** React.js, Express.js, Node.js, Vite
+
 
